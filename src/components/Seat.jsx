@@ -6,14 +6,14 @@ class Seat extends Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
-  } 
+  }
 
   handleClick() {
     !this.props.isReserved && this.props.selectSeat();
   }
 
   render() {
-    const { isSelected, isEnabled, isReserved } = this.props;
+    const { isSelected, isEnabled, isReserved, isPaid } = this.props;
     const className = cx(
       "Seat",
       { "Seat--selected": isSelected },
@@ -21,7 +21,7 @@ class Seat extends Component {
       { "Seat--reserved": isReserved }
     );
     return (
-      <div className={className} onClick={this.handleClick}>
+      <div className={className} onClick={this.handleClick} title={isPaid && !isReserved ? '€18.75' : 'Free of Charge'}>
         <span className="SeatNumber">{this.props.seatNumber}</span>
       </div>
     );
@@ -31,14 +31,15 @@ class Seat extends Component {
 Seat.propTypes = {
   isSelected: PropTypes.bool,
   isReserved: PropTypes.bool,
+  isPaid: PropTypes.bool,
   seatNumber: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
   selectSeat: PropTypes.func.isRequired
 };
 
 Seat.defaultProps = {
-  isSelected: false
+  isSelected: false,
+  isPaid: false,
 };
 
 export default Seat;
-

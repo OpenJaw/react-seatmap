@@ -1,6 +1,6 @@
 {
   "name": "react-seatmap",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A React component to display a minimal, yet functional seatmap.",
   "main": "index.js",
   "scripts": {
