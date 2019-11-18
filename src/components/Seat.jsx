@@ -18,10 +18,11 @@ class Seat extends Component {
       "Seat",
       { "Seat--selected": isSelected },
       { "Seat--enabled": !isSelected && isEnabled && !isReserved },
-      { "Seat--reserved": isReserved }
+      { "Seat--reserved": isReserved },
+      { "Seat--paid": isPaid }
     );
     return (
-      <div className={className} onClick={this.handleClick} title={isPaid && !isReserved ? '€18.75' : 'Free of Charge'}>
+      <div className={className} onClick={this.handleClick} title={isPaid ? '€18.75' : 'Free of Charge'}>
         <span className="SeatNumber">{this.props.seatNumber}</span>
       </div>
     );

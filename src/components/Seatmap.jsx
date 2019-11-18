@@ -39,7 +39,7 @@ class Seatmap extends Component {
         }
     }
 
-    
+
 
     render() {
         const { width } = this.state;
@@ -84,6 +84,7 @@ class Seatmap extends Component {
             const props = {
                 isSelected,
                 isReserved: seat.isReserved,
+                isPaid: seat.isPaid,
                 isEnabled: size < maxReservableSeats,
                 selectSeat: this.selectSeat.bind(this, rowNumber, seat.number),
                 seatNumber: seat.number,

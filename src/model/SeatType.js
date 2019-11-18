@@ -5,5 +5,6 @@ export default T.shape({
         T.string,
         T.number
     ]).isRequired,
-    isReserved: T.bool
+    isReserved: T.bool,
+    isPaid: T.bool
 });
