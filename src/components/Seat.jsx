@@ -18,8 +18,8 @@ class Seat extends Component {
       "Seat",
       { "Seat--selected": isSelected },
       { "Seat--enabled": !isSelected && isEnabled && !isReserved },
-      { "Seat--reserved": isReserved },
-      { "Seat--paid": isPaid }
+      { "Seat--paid": isPaid },
+      { "Seat--reserved": isReserved }
     );
     return (
       <div className={className} onClick={this.handleClick} title={isPaid ? '€18.75' : 'Free of Charge'}>
